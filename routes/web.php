@@ -31,3 +31,6 @@ Route::post('/add-animal', [App\Http\Controllers\AddAnimal::class, 'addAnimal'])
 Route::post('/registro', [App\Http\Controllers\Registro::class, 'registro'])->name('registro');
 
 
+
+
+
