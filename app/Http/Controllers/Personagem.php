@@ -13,13 +13,14 @@ class Personagem extends Controller
     function salvarPersonagem(Request $dados){
         //criar codigo para salvar no BD
         $personagem = new Personagens();
-        $personagem -create($dados->all());
+        $personagem -> create($dados->all());
         
         // $personagem = $dados->all();
         // $personagem ->save();
     }
     
     function listarPersonagem(){
-        return view('listar-personagem');
+        $personagem = Personagem::all() ->toArray()->paginate(3);
+        return view('listar-personagem', ['personagem' => $personagem]);
     }
 }
